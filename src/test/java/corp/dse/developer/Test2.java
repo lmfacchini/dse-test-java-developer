@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 public class Test2 {
 
 
@@ -15,14 +18,18 @@ public class Test2 {
         Person person2 = new Person("John Doe", 31, "123456789");
         Person person3 = new Person("Jane Smith", 28, "987654321");
 
-        System.out.println(person1.equals(person2));
-        System.out.println(person1.equals(person3));
+        assertNotEquals(person1, person3);
+        assertEquals(person1, person2);
+
 
 
         Set<Person> people = new HashSet<>();
         people.add(person1);
         people.add(person2);
         people.add(person3);
+
+        assertEquals(2, people.size());
+
 
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class AnagramGenerator {
 
-    public static List<String> generateAnagrams(String value) {
+    public List<String> generateAnagrams(String value) {
         if (StringUtils.isBlank(value) || !value.matches("[a-zA-Z]+")) {
             throw new IllegalArgumentException("Invalid value.");
         }
@@ -17,7 +17,7 @@ public class AnagramGenerator {
     }
 
 
-    private static void exchange(List<String> result, char[] chars, int index) {
+    private void exchange(List<String> result, char[] chars, int index) {
         if (index == chars.length - 1) {
             result.add(new String(chars));
         }else{
@@ -31,7 +31,7 @@ public class AnagramGenerator {
     }
 
 
-    private static void swap(char[] array, int i, int j) {
+    private void swap(char[] array, int i, int j) {
         char temp = array[i];
         array[i] = array[j];
         array[j] = temp;
